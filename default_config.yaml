@@ -1,0 +1,61 @@
+project: BioGenAI-MRG
+conference: ICCIES 2027
+seed: 42
+
+dataset:
+  t0_snapshot: "2025-09-15"
+  t1_snapshot: "2025-11-23"
+  genome_build: "GRCh38"
+  min_review_stars: 2
+  total_variants: 52949
+  missense_variants: 25416
+  non_missense_variants: 27533
+  pfam_paralog_clusters: 1942
+  discordant_genes: 1846
+  discordant_gene_variants: 31420
+
+graph_schema:
+  total_nodes: 89254
+  total_edges: 604195
+  node_counts:
+    Variant: 52949
+    Gene: 10828
+    Protein: 10828
+    Phenotype: 6814
+    Domain: 4892
+    Pathway: 1843
+    ExonRegion: 1100
+  edge_counts:
+    Variant-Gene: 52949
+    Variant-Domain: 58412
+    Variant-ExonRegion: 52949
+    Gene-Domain: 19840
+    Gene-ExonRegion: 10828
+    Gene-Protein: 10828
+    Protein-Protein: 248612
+    Gene-Pathway: 41520
+    Gene-Phenotype: 108257
+
+model:
+  hidden_dim: 256
+  num_layers: 3
+  num_heads: 4
+  dropedge_rate: 0.30
+  markov_window_bp: 15
+  markov_orders: [1, 2]
+  laplace_alpha: 1.0
+  learning_rate: 0.0003
+  weight_decay: 0.0001
+  importance_weight_clip: [0.2, 5.0]
+
+calibration_and_xai:
+  clingen_thresholds:
+    PP3_Supporting: 2.08
+    PP3_Moderate: 4.33
+    PP3_Strong: 18.70
+    BP4_Supporting: 0.48
+    BP4_Moderate: 0.23
+  priors_sensitivity: [0.0441, 0.10, "empirical_stratum"]
+  ig_riemann_steps: 50
+  bootstrap_iterations: 1000
+  paired_test_iterations: 10000

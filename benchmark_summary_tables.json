@@ -1,0 +1,206 @@
+{
+  "paper": "Multiscale Relational Graph Learning, Sequential Markov Modeling, and Calibrated Explainable AI for Clinical Genetic Variant Prioritization and Evidence Calibration (ICCIES 2027)",
+  "author": "Pham Nguyen Tuan Kiet (Ton Duc Thang University)",
+  "table2_nested_cv": [
+    {
+      "model": "Gene-Identity Prior [7]",
+      "regime": "Prior (Pfam)",
+      "global_auroc": 0.7918,
+      "global_auprc": 0.3412,
+      "missense_auprc": 0.3845,
+      "non_missense_auprc": 0.241,
+      "intra_gene_auroc": 0.5,
+      "ece": 0.0842
+    },
+    {
+      "model": "Consequence + LoF (pLI)",
+      "regime": "Reg. I (Pfam)",
+      "global_auroc": 0.8315,
+      "global_auprc": 0.5418,
+      "missense_auprc": 0.4612,
+      "non_missense_auprc": 0.5842,
+      "intra_gene_auroc": 0.6845,
+      "ece": 0.0615
+    },
+    {
+      "model": "Legacy 3-Node Hub GAT",
+      "regime": "Reg. II (Gene)",
+      "global_auroc": 0.8586,
+      "global_auprc": 0.4498,
+      "missense_auprc": 0.214,
+      "non_missense_auprc": 0.2085,
+      "intra_gene_auroc": 0.5012,
+      "ece": 0.1428
+    },
+    {
+      "model": "REVEL [9] (Missense)",
+      "regime": "Ext. (Gene)",
+      "global_auroc": 0.9084,
+      "global_auprc": 0.7145,
+      "missense_auprc": 0.7145,
+      "non_missense_auprc": null,
+      "intra_gene_auroc": 0.8412,
+      "ece": 0.0784
+    },
+    {
+      "model": "BayesDel-noAF [10]",
+      "regime": "Reg. I (Gene)",
+      "global_auroc": 0.9162,
+      "global_auprc": 0.731,
+      "missense_auprc": 0.731,
+      "non_missense_auprc": null,
+      "intra_gene_auroc": 0.854,
+      "ece": 0.0692
+    },
+    {
+      "model": "AlphaMissense [8]",
+      "regime": "Ext. (Miss.)",
+      "global_auroc": 0.9245,
+      "global_auprc": 0.7618,
+      "missense_auprc": 0.7618,
+      "non_missense_auprc": null,
+      "intra_gene_auroc": 0.869,
+      "ece": 0.0645
+    },
+    {
+      "model": "AlphaGenome [13] (Post-T0)",
+      "regime": "Ext. (Non-M.)",
+      "global_auroc": 0.9182,
+      "global_auprc": 0.7485,
+      "missense_auprc": null,
+      "non_missense_auprc": 0.7485,
+      "intra_gene_auroc": 0.8562,
+      "ece": 0.0568
+    },
+    {
+      "model": "CADD v1.7 + SpliceAI [11,12]",
+      "regime": "Reg. I (Pfam)",
+      "global_auroc": 0.8964,
+      "global_auprc": 0.6782,
+      "missense_auprc": 0.664,
+      "non_missense_auprc": 0.6945,
+      "intra_gene_auroc": 0.8195,
+      "ece": 0.058
+    },
+    {
+      "model": "AM + AlphaGenome (Routed)",
+      "regime": "Post-T0 (Pfam)",
+      "global_auroc": 0.9318,
+      "global_auprc": 0.7554,
+      "missense_auprc": 0.7618,
+      "non_missense_auprc": 0.7485,
+      "intra_gene_auroc": 0.8624,
+      "ece": 0.0592
+    },
+    {
+      "model": "Tabular GBDT (XGBoost, w/o Graph)",
+      "regime": "Reg. I (Pfam)",
+      "global_auroc": 0.9142,
+      "global_auprc": 0.7385,
+      "missense_auprc": 0.7512,
+      "non_missense_auprc": 0.7218,
+      "intra_gene_auroc": 0.8614,
+      "ece": 0.0412
+    },
+    {
+      "model": "Same-Backbone: No Msg. Passing",
+      "regime": "Reg. I (Pfam)",
+      "global_auroc": 0.9185,
+      "global_auprc": 0.7462,
+      "missense_auprc": 0.759,
+      "non_missense_auprc": 0.7312,
+      "intra_gene_auroc": 0.8692,
+      "ece": 0.0049
+    },
+    {
+      "model": "Same-Backbone: Permuted Graph",
+      "regime": "Reg. I (Pfam)",
+      "global_auroc": 0.919,
+      "global_auprc": 0.748,
+      "missense_auprc": 0.7605,
+      "non_missense_auprc": 0.733,
+      "intra_gene_auroc": 0.8705,
+      "ece": 0.0048
+    },
+    {
+      "model": "Same-Backbone: w/o Domain/Exon",
+      "regime": "Reg. I (Pfam)",
+      "global_auroc": 0.9248,
+      "global_auprc": 0.7615,
+      "missense_auprc": 0.774,
+      "non_missense_auprc": 0.746,
+      "intra_gene_auroc": 0.878,
+      "ece": 0.0045
+    },
+    {
+      "model": "Same-Backbone: Per-Rel. Softmax",
+      "regime": "Reg. I (Pfam)",
+      "global_auroc": 0.9312,
+      "global_auprc": 0.779,
+      "missense_auprc": 0.7945,
+      "non_missense_auprc": 0.761,
+      "intra_gene_auroc": 0.8895,
+      "ece": 0.0044
+    },
+    {
+      "model": "BioGenAI-MRG (w/o HPO & Deg.)",
+      "regime": "Reg. I-Strict",
+      "global_auroc": 0.934,
+      "global_auprc": 0.7862,
+      "missense_auprc": 0.8025,
+      "non_missense_auprc": 0.7654,
+      "intra_gene_auroc": 0.9012,
+      "ece": 0.0043
+    },
+    {
+      "model": "BioGenAI-MRG (Full Cross-Rel.)",
+      "regime": "Reg. I (Pfam)",
+      "global_auroc": 0.9386,
+      "global_auprc": 0.7946,
+      "missense_auprc": 0.8104,
+      "non_missense_auprc": 0.7742,
+      "intra_gene_auroc": 0.9048,
+      "ece": 0.0042
+    },
+    {
+      "model": "BioGenAI-MRG (Full Cross-Rel.)",
+      "regime": "Reg. I (Gene)",
+      "global_auroc": 0.9462,
+      "global_auprc": 0.8128,
+      "missense_auprc": 0.8295,
+      "non_missense_auprc": 0.7912,
+      "intra_gene_auroc": 0.9165,
+      "ece": 0.0038
+    },
+    {
+      "model": "Same-Backbone: No Msg. Passing",
+      "regime": "Reg. II (Gene)",
+      "global_auroc": 0.9642,
+      "global_auprc": 0.8395,
+      "missense_auprc": 0.856,
+      "non_missense_auprc": 0.814,
+      "intra_gene_auroc": 0.932,
+      "ece": 0.0031
+    },
+    {
+      "model": "BioGenAI-MRG (Uncal. Logits)",
+      "regime": "Reg. II (Gene)",
+      "global_auroc": 0.9806,
+      "global_auprc": 0.8755,
+      "missense_auprc": 0.892,
+      "non_missense_auprc": 0.8529,
+      "intra_gene_auroc": 0.9655,
+      "ece": 0.0684
+    },
+    {
+      "model": "BioGenAI-MRG (Calibrated)",
+      "regime": "Reg. II (Gene)",
+      "global_auroc": 0.9806,
+      "global_auprc": 0.8755,
+      "missense_auprc": 0.892,
+      "non_missense_auprc": 0.8529,
+      "intra_gene_auroc": 0.9655,
+      "ece": 0.0023
+    }
+  ]
+}
